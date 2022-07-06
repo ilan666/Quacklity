@@ -1,0 +1,38 @@
+Things to do in the end of the project:
+
+Resolver
+Behaviour and Replay Subjects
+
+Project Features:
+
+- Caching
+- Lazy
+- Responsive DatePicker 
+- Pop up message if not signed in on rate 
+- Note center in home component 
+- Tool tips on the needed elements
+- filtering 
+- sorting *
+- Make pagination work for sorted bottles
+- Option to change delivery address
+
+2. -=[ Nav bar ]=-
+
+- add badges to the cart
+
+4. -=[ Following/Followers system ]=-
+
+- Add option to follow users
+- Following users will have the access to view the followed users orders and ratings
+
+6. -=[ Ranking system ]=-
+
+- Add rank requirements for orders, ratings, following, followers
+- Display rank in the Member profile
+
+7. -=[ Member Edit Component ]=-
+
+- Add the needed options and functionality
+
+9. -=[ Cart ]=-
+- Add Remove all, Remove one, Add one buttons

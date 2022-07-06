@@ -1,0 +1,187 @@
+<div class="card mat-elevation-z4" *ngIf="rated_whiskey" routerLink="/whiskey-details/{{rated_whiskey.id}}">
+    <div class="rated-whiskey-display-area">
+        <img src="https://www.vipbottles.co.uk/wp-content/uploads/2021/01/The-Macallan-18-Year-Old-Sherry-Oak-Whisky-70cl.jpg" class="whiskey-img">
+    </div>
+    <span>
+    <div class="card-body text-center card-body-rated">
+        <h5 class="card-title rated-title text-center">{{rated_whiskey.name}} {{rated_whiskey.age}}</h5>
+        <p class="card-text text-muted">{{rated_whiskey.type | uppercase}}</p>
+        <div class="rated-rating">
+          <p class="card-text text-primary rating-number">{{rated_whiskey?.rating}}.0</p>
+          <rating class="rating-stars" [(ngModel)]="rated_whiskey.rating" [max]="5" [readonly]="true"></rating>
+          <p class="card-text text-primary rating-count">{{rated_whiskey.rating_Count}} ratings</p>
+      </div>
+      <div class="rated-checkout">
+        <ng-container *ngIf="user; else cantBuy">
+        <button matRipple [matRippleCentered]="true" class="btn btn-primary home-add-to-cart-btn" (click)="$event.stopPropagation()" (click)="addToCart(rated_whiskey.id)">
+          ${{rated_whiskey.price}}
+          <br>
+          Add to cart
+        </button>
+      </ng-container>
+      <ng-template #cantBuy>
+        <a matRipple [matRippleCentered]="true" class="btn btn-primary home-add-to-cart-btn" (click)="$event.stopPropagation()" routerLink="/login">
+          ${{rated_whiskey.price}}
+          <br>
+          Add to cart
+        </a>
+      </ng-template>
+    </div>
+    </div>
+    </span>
+</div>
+
+<div class="card-container text-center mat-elevation-z8">
+    <div class="card" *ngIf="whiskey" routerLink="/whiskey-details/{{whiskey.id}}">
+        <div class="whiskey-display-area">
+            <!-- <img src="{{whiskey.photoUrl}}"> -->
+            <img class="whiskey-img" src="https://www.vipbottles.co.uk/wp-content/uploads/2021/01/The-Macallan-18-Year-Old-Sherry-Oak-Whisky-70cl.jpg ">
+        </div>
+        <div class="card-body text-center">
+            <h5 class="card-title whiskey-title text-center">{{whiskey.name}}</h5>
+            <!-- <p class="card-text text-muted">{{whiskey.type | uppercase}}</p> -->
+            <div class="whiskey-card-values">
+                <p class="card-text card-head text-muted">{{whiskey.type | uppercase}}</p>
+                <p class="card-text card-head" *ngIf="whiskey.cask_Type">{{whiskey.cask_Type}} Cask</p>
+                <div class="card-text" *ngIf="whiskey.age">
+                    <p class="whiskey-stat-age">{{whiskey.age}}</p>
+                    <p class="whiskey-stat-age-label">YEARS OLD</p>
+                </div>
+                <p class="card-text">{{whiskey.bottler}}</p>
+                <div class="card-text">
+
+                    <div class="whiskey-stats-container">
+
+                        <div class="rating">
+                            <p class="card-text text-primary rating-number">{{whiskey?.rating}}.0</p>
+                            <rating class="rating-stars" [(ngModel)]="whiskey.rating" [max]="5" [readonly]="true"></rating>
+                            <p class="card-text text-primary rating-count">{{whiskey.rating_Count}} ratings</p>
+                        </div>
+                        <div class="whiskey-style-container">
+                            <p class="whiskey-statistics-header text-muted">Style</p>
+                            <div class="style-container">
+
+                                <div class="subtitles">
+                                    <p>Body:</p>
+                                    <p>Richness:</p>
+                                    <p>Smoke:</p>
+                                    <p>Sweetness:</p>
+                                </div>
+                                <div class="subtitles-values">
+                                    <p>{{whiskey.style?.body}}</p>
+                                    <p>{{whiskey.style?.richness}}</p>
+                                    <p>{{whiskey.style?.smoke}}</p>
+                                    <p>{{whiskey.style?.sweetness}}</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="whiskey-characteristics-container">
+                            <p class="statistics-header text-muted">Characteristics</p>
+                            <div class="characteristics-container">
+                                <div *ngFor="let char of whiskey.characteristics">{{char}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="whiskey-card-checkout">
+                    <div class="checkout">
+                        <ng-container *ngIf="user; else cantBuy">
+                            <button matRipple [matRippleCentered]="true" class="btn btn-primary shop-add-to-cart-btn" (click)="$event.stopPropagation()" (click)="addToCart(whiskey.id)">
+                          ${{whiskey.price}}
+                          <br>
+                          Add to cart
+                        </button>
+                        </ng-container>
+                        <ng-template #cantBuy>
+                            <a matRipple [matRippleCentered]="true" class="btn btn-primary shop-add-to-cart-btn" (click)="$event.stopPropagation()" routerLink="/login">
+                          ${{whiskey.price}}
+                          <br>
+                          Add to cart
+                        </a>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card-container text-center mat-elevation-z8">
+    <div class="card" *ngIf="userRatedWhiskey" routerLink="/whiskey-details/{{userRatedWhiskey.id}}">
+        <div class="whiskey-display-area">
+            <!-- <img src="{{whiskey.photoUrl}}"> -->
+            <img class="whiskey-img" src="https://www.vipbottles.co.uk/wp-content/uploads/2021/01/The-Macallan-18-Year-Old-Sherry-Oak-Whisky-70cl.jpg ">
+        </div>
+        <div class="card-body text-center">
+            <h5 class="card-title whiskey-title text-center">{{userRatedWhiskey.name}}</h5>
+            <!-- <p class="card-text text-muted">{{whiskey.type | uppercase}}</p> -->
+            <div class="whiskey-card-values">
+                <p class="card-text card-head text-muted">{{userRatedWhiskey.type | uppercase}}</p>
+                <p class="card-text card-head" *ngIf="userRatedWhiskey.cask_Type">{{userRatedWhiskey.cask_Type}} Cask</p>
+                <div class="card-text" *ngIf="userRatedWhiskey.age">
+                    <p class="whiskey-stat-age">{{userRatedWhiskey.age}}</p>
+                    <p class="whiskey-stat-age-label">YEARS OLD</p>
+                </div>
+                <p class="card-text">{{userRatedWhiskey.bottler}}</p>
+                <div class="card-text">
+
+                    <div class="whiskey-stats-container">
+
+                        <div class="rating">
+                            <p class="card-text text-primary rating-number">{{userRatedWhiskey.rating}}.0</p>
+                            <rating class="rating-stars" [(ngModel)]="userRatedWhiskey.rating" [max]="5" [readonly]="true"></rating>
+                            <p class="card-text text-primary rating-count">{{userRatedWhiskey.rating_Count}} ratings</p>
+                        </div>
+                        <div class="whiskey-style-container">
+                            <p class="whiskey-statistics-header text-muted">Style</p>
+                            <div class="style-container">
+
+                                <div class="subtitles">
+                                    <p>Body:</p>
+                                    <p>Richness:</p>
+                                    <p>Smoke:</p>
+                                    <p>Sweetness:</p>
+                                </div>
+                                <div class="subtitles-values">
+                                    <p>{{userRatedWhiskey.style?.body}}</p>
+                                    <p>{{userRatedWhiskey.style?.richness}}</p>
+                                    <p>{{userRatedWhiskey.style?.smoke}}</p>
+                                    <p>{{userRatedWhiskey.style?.sweetness}}</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="whiskey-characteristics-container">
+                            <p class="statistics-header text-muted">Characteristics</p>
+                            <div class="characteristics-container">
+                                <div *ngFor="let char of userRatedWhiskey.characteristics">{{char}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="whiskey-card-checkout">
+                    <div class="checkout-user-rated">
+                        <ng-container *ngIf="user; else cantBuy">
+                            <button matRipple [matRippleCentered]="true" class="btn btn-primary shop-add-to-cart-btn-user" (click)="$event.stopPropagation()" (click)="addToCart(userRatedWhiskey.id)">
+                        ${{userRatedWhiskey.price}}
+                        <br>
+                        Add to cart
+                      </button>
+                        </ng-container>
+                        <ng-template #cantBuy>
+                            <a matRipple [matRippleCentered]="true" class="btn btn-primary shop-add-to-cart-btn-user" (click)="$event.stopPropagation()" routerLink="/login">
+                        ${{userRatedWhiskey.price}}
+                        <br>
+                        Add to cart
+                      </a>
+                        </ng-template>
+                        <button matRipple [matRippleCentered]="true" class="btn btn-danger shop-add-to-cart-btn-user" (click)="$event.stopPropagation()" (click)="removeRating(userRatedWhiskey.id)">
+                        Remove from ratings
+                      </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

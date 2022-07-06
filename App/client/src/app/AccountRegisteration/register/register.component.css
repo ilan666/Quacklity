@@ -1,0 +1,99 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 35rem;
+    padding: 1rem;
+    border-radius: 2em;
+    width: 30rem;
+    background-color: aliceblue;
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.stepper {
+    position: relative;
+}
+
+h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'FontAwesome';
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid lightgray;
+    width: 15rem;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+mat-horizontal-stepper {
+    background-color: initial;
+}
+
+mat-form-field {
+    width: 98%;
+}
+
+.control,
+mat-label {
+    height: 2rem;
+    font-size: 1.2rem;
+    font-family: 'FontAwesome';
+}
+
+.register-confirm {
+    width: 8rem;
+    height: 3rem;
+    border-radius: 3em;
+    letter-spacing: 2px;
+    box-shadow: 0px 4px 8px -5px black, 0 5px 27px #00adff !important;
+    font-family: 'FontAwesome';
+}
+
+.register-confirm:hover {
+    box-shadow: 0px 4px 8px -5px black, 0 5px 27px #4bbf73 !important;
+    background-color: aliceblue;
+}
+
+.register-back {
+    width: 8rem;
+    height: 3rem;
+    border-radius: 3em;
+    letter-spacing: 2px;
+    box-shadow: 0px 4px 8px -5px black, 0 5px 27px gray !important;
+    font-family: 'FontAwesome';
+}
+
+.register-back:hover {
+    box-shadow: 0px 4px 8px -5px black, 0 5px 27px black !important;
+    background-color: aliceblue;
+}
+
+.btn {
+    margin-top: 1rem;
+}
+
+.row {
+    background-color: bisque;
+    margin: 0px;
+    height: 100%;
+}
+
+mat-error {
+    font-size: 14px;
+}
+
+.spinner-label {
+    color: white;
+    text-transform: none;
+}

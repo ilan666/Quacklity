@@ -1,0 +1,33 @@
+.row {
+    background-color: bisque;
+    margin: 0px;
+    height: 92.5%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+.container>h1 {
+    font-family: cursive;
+    font-size: 17rem;
+    font-weight: bold;
+    color: brown;
+    opacity: 40%;
+}
+
+.container>h2 {
+    font-family: cursive;
+    font-weight: bold;
+    text-transform: none;
+    background-color: bisque;
+}
+
+.container>a {
+    border-radius: 2em;
+    position: relative;
+}

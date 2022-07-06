@@ -1,0 +1,112 @@
+.navbar {
+    background-color: aliceblue;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: space-evenly;
+}
+
+.btn {
+    text-transform: none;
+    font-family: 'FontAwesome';
+    font-size: 1rem;
+    width: 6rem;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+}
+
+.dropdown-item:hover {
+    background-color: #0969da;
+    color: white;
+}
+
+.img {
+    max-height: 3rem;
+    border-radius: 50%;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.navbar-nav {
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    height: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.nav-item {
+    height: inherit;
+}
+
+.nav-link {
+    padding-bottom: 0px;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fa-nav {
+    font-size: 40px;
+}
+
+.nav-hint {
+    font-size: 16px;
+    text-transform: none;
+}
+
+.nav-link:focus,
+.nav-link:hover:not(.main-link),
+.nav-link:active {
+    color: lightgreen;
+}
+
+.user-nav-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-shopping-cart {
+    margin-right: 1.5rem;
+}
+
+.cart {
+    color: gray;
+    font-size: 3.5rem;
+    margin-left: 1.5rem;
+}
+
+.main-text {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'FontAwesome';
+    text-shadow: 0px 1px 15px yellow;
+    color: #f0ad4e;
+    text-decoration-line: underline;
+}
+
+.profile-dropdown {
+    border-left: 1px solid lightgray;
+    padding-left: 1rem;
+}
+
+@media only screen and (max-width: 1025px) {
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        width: 7rem;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    .nav-item {
+        margin: 0px;
+    }
+}

@@ -1,0 +1,90 @@
+<div class="row">
+    <mat-sidenav-container>
+        <mat-sidenav mode="side" opened class="sidenav mat-elevation-z4">
+            <img class="avatar mat-elevation-z8" [src]="user.photoUrl || './assets/user.png'" alt="user.username">
+
+            <h4 class="name">{{user.username}}</h4>
+            <p class="description">Description</p>
+
+            <mat-divider></mat-divider>
+
+            <button mat-button class="menu-button" routerLink="/edit-profile">
+      <span>Edit profile</span>
+    </button>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <div class="content-container mat-elevation-z4">
+
+                <div class="tabs">
+                    <tabset [justified]="true" class="user-profile-tabset">
+                        <tab heading="ABOUT">
+                            <div class="row about">
+                                <div class="col-6 text-center">
+                                    <span class="header">Ratings</span>
+                                    <p class="header-rate">{{member?.ratings ? member.ratings : 0}}</p>
+                                </div>
+
+                                <div class="col-6 text-center">
+                                    <span class="header">Orders</span>
+                                    <p class="header-rate">{{member?.orders ? member.orders : 0}}</p>
+                                </div>
+
+                                <div class="col-6 text-center">
+                                    <span class="header">Following</span>
+                                    <p class="header-rate">0</p>
+                                </div>
+
+                                <div class="col-6 text-center">
+                                    <span class="header">Followers</span>
+                                    <p class="header-rate">0</p>
+                                </div>
+                            </div>
+                        </tab>
+                        <tab heading="TOP RATINGS">
+                            <ng-container *ngIf="ratedBottles && ratedBottles.length; else noRates">
+                                <div *ngFor="let bottle of topRatedBottles">
+                                    <div class="rated-bottle-container">
+                                        <div>
+                                            <p class="rated-bottle-username">{{user.username}} rated this bottle</p>
+                                            <rating class="rating-stars" [(ngModel)]="bottle.currentUserRating" [max]="5" [readonly]="true"></rating>
+                                        </div>
+                                        <app-bottle-card [userRatedWhiskey]="bottle" (refreshPage)="refreshPage()"></app-bottle-card>
+                                    </div>
+                                </div>
+                            </ng-container>
+                            <ng-template #noRates>
+                                <h2 class="noRates">This user hasen't rated anything yet...</h2>
+                            </ng-template>
+                        </tab>
+                        <tab heading="LATEST RATINGS">
+                            <ng-container *ngIf="ratedBottles && ratedBottles.length; else noRates">
+                                <div *ngFor="let bottle of ratedBottles">
+                                    <div class="rated-bottle-container">
+                                        <div>
+                                            <p class="rated-bottle-username">{{user.username}} rated this bottle</p>
+                                            <rating class="rating-stars" [(ngModel)]="bottle.currentUserRating" [max]="5" [readonly]="true"></rating>
+                                        </div>
+                                        <app-bottle-card [userRatedWhiskey]="bottle"></app-bottle-card>
+                                    </div>
+                                </div>
+                            </ng-container>
+                            <ng-template #noRates>
+                                <h2 class="noRates">This user hasen't rated anything yet...</h2>
+                            </ng-template>
+                        </tab>
+                        <tab heading="WISH LIST">
+                            <ng-container *ngIf="wishedBottles && wishedBottles.length; else noWishes">
+
+                            </ng-container>
+                            <ng-template #noWishes>
+                                <h2 class="noRates">This user doesn't have a wish list yet...</h2>
+                            </ng-template>
+                        </tab>
+                    </tabset>
+                </div>
+
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

@@ -1,0 +1,116 @@
+<div class="row" *ngIf="whiskey" style="margin: 0px;">
+    <div class="bottle-preview">
+        <div class="col-4">
+            <img class="img" src="https://www.vipbottles.co.uk/wp-content/uploads/2021/01/The-Macallan-18-Year-Old-Sherry-Oak-Whisky-70cl.jpg">
+            <p class="bottle-price">${{whiskey.price}}</p>
+            <ng-container *ngIf="user; else cantBuy">
+                <button class="btn btn-primary purchase-btn" (click)="addToCart(whiskey.id)">Add to cart</button>
+            </ng-container>
+            <ng-template #cantBuy>
+                <a class="btn btn-primary purchase-btn" routerLink="/login">Add to cart</a>
+            </ng-template>
+        </div>
+        <div class="bottle-preview-desc">
+            <h1 class="bottle-preview-header">{{whiskey.name}}</h1>
+            <div class="row">
+                <div class="whiskey-style-container">
+                    <p class="stat-header text-muted text-center">Style</p>
+                    <div class="whiskey-style-values">
+                        <div>
+                            <p>Body: </p>
+                            <p>Richness: </p>
+                            <p>Smoke: </p>
+                            <p>Sweetness: </p>
+                        </div>
+                        <div>
+                            <p>{{whiskey.style?.body}}</p>
+                            <p>{{whiskey.style?.richness}}</p>
+                            <p>{{whiskey.style?.smoke}}</p>
+                            <p>{{whiskey.style?.sweetness}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="whiskey-age-container" *ngIf="whiskey.age">
+                    <p class="whiskey-age">{{whiskey.age}}</p>
+                    <p class="whiskey-age-label text-muted">YEARS OLD</p>
+                </div>
+                <div class="whiskey-char-container">
+                    <p class="stat-header text-muted text-center">Charecaristics</p>
+                    <div class="whiskey-char-values">
+                        <div>
+                            <p>Body: </p>
+                            <p>Richness: </p>
+                            <p>Smoke: </p>
+                            <p>Sweetness: </p>
+                        </div>
+                        <div>
+                            <p>0</p>
+                            <p>0</p>
+                            <p>0</p>
+                            <p>0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="whiskey-preview-container">
+                    <h3 class="whiskey-preview-type text-muted">{{whiskey.type}}</h3>
+                    <div class="rating-container">
+                        <div class="rating">
+                            <p class="card-text text-primary rating-number">{{whiskey.rating}}.0</p>
+                            <rating class="rating-stars" [(ngModel)]="whiskey.rating" [max]="5" [readonly]="true"></rating>
+                            <p class="card-text text-primary rating-count">{{whiskey.rating_Count}} ratings</p>
+                        </div>
+                        <ng-container *ngIf="user; else cantRate">
+                            <div class="user-rate mat-elevation-z8">
+                                <img class="user-img" [src]="member?.photoUrl">
+                                <mat-hint>Add your own rating and help</mat-hint>
+                                <mat-hint>Quacklity users pick the best whiskey</mat-hint>
+                                <rating class="rating-stars" [(ngModel)]="rate" [max]="5" (onHover)="overStar = $event" (onLeave)="overStar = 0" [readonly]="false"></rating>
+                                <button class="btn btn-primary rating-submit" (click)="addRating()">Submit</button>
+                            </div>
+                        </ng-container>
+                        <ng-template #cantRate class="user-rate mat-elevation-z8">
+                            <div class="user-rate mat-elevation-z8">
+                                <img class="user-img" [src]="'/assets/logo.png'">
+                                <mat-hint>Rating is available for</mat-hint>
+                                <mat-hint>Registered Quacklity users</mat-hint>
+                                <a class="btn btn-primary rating-login-btn" routerLink="/login">Login</a>
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+                <div class="whiskey-details-container">
+                    <h1 class="whiskey-details-header">About this bottle</h1>
+                    <div class="details-container">
+                        <div class="detail" *ngIf="whiskey.bottler">
+                            <p class="detail-header">Bottler</p>
+                            <p>{{whiskey.bottler}}</p>
+                        </div>
+                        <div class="detail" *ngIf="whiskey.region">
+                            <p class="detail-header">Region</p>
+                            <p>{{whiskey.region}}</p>
+                        </div>
+                        <div class="detail" *ngIf="whiskey.cask_Type">
+                            <p class="detail-header">Cask</p>
+                            <p>{{whiskey.cask_Type}}</p>
+                        </div>
+                        <div class="detail" *ngIf="whiskey.colouring">
+                            <p class="detail-header">Colouring</p>
+                            <p>{{whiskey.colouring}}</p>
+                        </div>
+                        <div class="detail" *ngIf="whiskey.age_Statement">
+                            <p class="detail-header">Age Statement</p>
+                            <p>{{whiskey.age_Statement}}</p>
+                        </div>
+                        <div class="detail">
+                            <p class="detail-header" *ngIf="whiskey.proof">Proof</p>
+                            <p>%{{whiskey.proof}}</p>
+                        </div>
+                        <div class="detail">
+                            <p class="detail-header" *ngIf="whiskey.quantity">Quantity</p>
+                            <p>{{whiskey.quantity}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

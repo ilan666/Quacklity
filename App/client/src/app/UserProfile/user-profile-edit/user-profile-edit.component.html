@@ -1,0 +1,210 @@
+<div class="row">
+    <mat-sidenav-container *ngIf="member">
+        <mat-sidenav mode="side" opened class="sidenav mat-elevation-z4">
+            <img class="avatar mat-elevation-z8" [src]="user.photoUrl ? user.photoUrl : './assets/user.png'" alt="user.username">
+
+            <h4 class="name">{{member.nickname ? member.nickname : member.firstName + ' ' + member.lastName}}</h4>
+            <p class="description">Description</p>
+
+            <mat-divider></mat-divider>
+
+            <button mat-button class="menu-button" (click)="updateMember()">
+          <span class="material-icons">check_circle_outline</span><span>Save changes</span>
+  </button>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <div class="content-container mat-elevation-z4">
+
+                <div class="tabs">
+                    <tabset [justified]="true" class="user-profile-tabset">
+                        <tab heading="DETAILS & SETTINGS">
+                            <form #detailsForm="ngForm">
+
+                                <h2>Naming</h2>
+                                <div class="form-group">
+                                    <mat-form-field class="form-control">
+                                        <mat-label>First name</mat-label>
+                                        <input type="text" matInput placeholder="Ex. pat" class="control" [(ngModel)]="member.firstName" [ngModelOptions]="{standalone: true}">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="form-control">
+                                        <mat-label>Last name</mat-label>
+                                        <input type="text" matInput placeholder="Ex. patroin" class="control" [(ngModel)]="member.lastName" [ngModelOptions]="{standalone: true}">
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field class="form-control">
+                                        <mat-label>Nickname</mat-label>
+                                        <input type="text" matInput placeholder="Ex. patty" class="control" [(ngModel)]="member.nickname" [ngModelOptions]="{standalone: true}">
+                                        <mat-hint>This name will be displayed throughout the Quacklity website</mat-hint>
+                                    </mat-form-field>
+                                </div>
+
+                                <hr>
+
+                                <h2>Bio & Website</h2>
+                                <h4 class="text-muted ">Introduce yourself with a short description and or your website</h4>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <mat-form-field class="form-control">
+                                            <mat-label>Website</mat-label>
+                                            <input type="text" matInput placeholder="Ex. www.pat.com" class="control" [(ngModel)]="member.website" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+                                        <mat-form-field class="form-control">
+                                            <mat-label>Bio</mat-label>
+                                            <input type="text" matInput placeholder="Ex. Hi i am pat, I'm intresrted in Single-Malt!" class="control" [(ngModel)]="member.description" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <section class="section-bordered section-md">
+                                    <div class="container text-sm">
+                                        <h2 class="settings-section-header">Profile images</h2>
+                                        <h4 class="text-muted">Customize your profile and backgroup pictures</h4>
+                                        <div class="photo-container">
+                                            <div class="col-sm-4">
+                                                <div class="profileImageUploader">
+                                                    <div class="display-area">
+                                                        <ngx-spinner>
+                                                            <h3 class="spinner-label">
+                                                                Queueing photo...
+                                                            </h3>
+                                                        </ngx-spinner>
+                                                        <img class="profile-img" [src]="photoUrl ? photoUrl : './assets/user.png'">
+                                                    </div>
+                                                    <div class="setting-file-upload">
+                                                        <input class="uploadFile" type="file" ng2FileSelect [uploader]="uploader">
+                                                        <button class="btn btn-success profileUploaderBtn">Change profile picture</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="backgroundImageUploader">
+                                                    <div class="display-area">
+                                                        <img class="background-img" [src]="'./assets/OIP.jpg'">
+                                                    </div>
+                                                    <div class="setting-file-upload">
+                                                        <input class="uploadFile" type="file" ng2FileSelect [uploader]="uploader" [disabled]="true">
+                                                        <button class="btn btn-success backgroundUploaderBtn" [disabled]="true">Change background picture</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <hr>
+
+                                <h2>Visability settings (Maintenance)</h2>
+                                <h4 class="text-muted ">Choose the community to share your details</h4>
+                                <!-- Content -->
+
+                                <hr>
+
+                                <h2>Username & Password</h2>
+                                <h4 class="text-muted ">Change the credentials for your user on Quacklity</h4>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <mat-form-field class="form-control">
+                                            <mat-label>Email</mat-label>
+                                            <input type="text" matInput placeholder="Ex. pat@gmail.com" class="control" [(ngModel)]="member.email" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+                                        <mat-form-field class="form-control">
+                                            <mat-label>Password</mat-label>
+                                            <input type="passsword" matInput class="control">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <h2>View & Notifications</h2>
+                                <h4 class="text-muted ">Choose the notifications you want to subscribe on Quacklity</h4>
+                                <!-- Content -->
+                            </form>
+                        </tab>
+                        <tab heading="BILLING">
+                            <form #billingForm="ngForm">
+                                <div class="form-group">
+                                    <h2>Delivery address</h2>
+                                    <div class="form-group">
+                                        <mat-form-field class="form-control">
+                                            <mat-label>Full Name</mat-label>
+                                            <input type="text" matInput placeholder="Ex. Pat Patroin" class="control">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+                                        <mat-form-field class="form-control">
+                                            <mat-label>Company</mat-label>
+                                            <input type="text" matInput placeholder="Optional" class="control">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+                                        <mat-form-field class="form-control">
+                                            <mat-label>Country</mat-label>
+                                            <input type="text" matInput placeholder="New-York" class="control" [(ngModel)]="member.country" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+                                        <mat-form-field class="form-control">
+                                            <mat-label>City</mat-label>
+                                            <input type="text" matInput placeholder="Ex. My city" class="control" [(ngModel)]="member.city" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+                                        <mat-form-field class="form-control">
+                                            <mat-label>Street and house number</mat-label>
+                                            <input type="text" matInput placeholder="Anvenue 4/10" class="control" [(ngModel)]="member.homeAddress" [ngModelOptions]="{standalone: true}">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+                                        <mat-form-field class="form-control">
+                                            <mat-label>Post Code</mat-label>
+                                            <input type="text" matInput placeholder="Ex. Pat 0000000" class="control">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+                                        <mat-form-field class="form-control">
+                                            <mat-label>Phone number</mat-label>
+                                            <input type="number" matInput placeholder="Ex. 050-1111111" class="control">
+                                            <mat-hint>This field is required so you'll be notified about the package</mat-hint>
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <mat-form-field class="form-control">
+                                            <mat-label>Credit Card</mat-label>
+                                            <input type="text" matInput placeholder="Ex. 0000 0000 0000 0000" class="control">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+                                        <mat-form-field class="form-control">
+                                            <mat-label>Expiration</mat-label>
+                                            <input type="text" matInput placeholder="Ex. MM/YY or 10/10" class="control">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+                                        <mat-form-field class="form-control">
+                                            <mat-label>SVV</mat-label>
+                                            <input type="number" matInput placeholder="Ex. 000" class="control">
+                                            <mat-hint>3 digits on the back of the card</mat-hint>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </form>
+                        </tab>
+                    </tabset>
+                </div>
+
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

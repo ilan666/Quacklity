@@ -1,0 +1,16 @@
+<div class="errors-container mat-elevation-z8">
+    <button class="btn btn-outline-danger" (click)="get400BadRequestError()">400 Bad Request Error</button>
+    <button class="btn btn-outline-danger" (click)="get401UnAuthorizedError()">401 UnAuthorized Error
+      <br>
+      <mat-hint>Need to be logged off</mat-hint>
+    </button>
+    <button class="btn btn-outline-danger" (click)="get400ValidationError()">400 Validation Error</button>
+    <button class="btn btn-outline-danger" (click)="get404NotFoundError()">404 Not Found Error</button>
+    <button class="btn btn-outline-danger" (click)="get500ServerError()">500 Server Error</button>
+</div>
+
+<div class="row mt-5" *ngIf="validationsErrors.length">
+    <ul class="text-danger">
+        <li *ngFor="let error of validationsErrors">{{error}}</li>
+    </ul>
+</div>

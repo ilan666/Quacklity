@@ -1,0 +1,211 @@
+.img {
+    width: 350px;
+    margin-top: 2rem;
+    border-radius: 5em;
+}
+
+.bottle-preview {
+    display: flex;
+}
+
+.bottle-preview-desc {
+    margin-top: 3rem;
+}
+
+.whiskey-style-values,
+.whiskey-char-values {
+    display: flex;
+    font-size: 18px;
+    justify-content: space-around;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    font-family: 'FontAwesome';
+}
+
+.whiskey-char-container,
+.whiskey-style-container,
+.whiskey-age-container {
+    width: 12rem;
+}
+
+.whiskey-age-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.whiskey-age {
+    font-size: 5rem;
+    font-family: 'FontAwesome';
+    font-weight: bold;
+}
+
+.whiskey-age-label {
+    margin-top: 1.5rem;
+    font-size: 14px;
+    font-family: 'FontAwesome';
+}
+
+.row {
+    justify-content: space-evenly;
+    background-color: bisque;
+}
+
+.bottle-preview-header {
+    border-bottom: 2px solid lightgray;
+    margin-bottom: 3rem;
+    font-family: monospace;
+    color: saddlebrown;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.whiskey-preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.whiskey-preview-type {
+    margin-top: 2rem;
+    letter-spacing: 5px;
+    font-family: 'FontAwesome';
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.rating {
+    height: 8rem;
+    text-align: center;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.rating-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+    align-content: center;
+}
+
+.user-rate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 14rem;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 32%;
+    background-color: aliceblue;
+}
+
+.user-img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.rating-number {
+    font-size: 3.5rem;
+    font-family: 'FontAwesome';
+    font-weight: bold;
+}
+
+.rating-stars {
+    font-size: 3rem;
+    margin-top: 1.5rem;
+    letter-spacing: 5px;
+}
+
+.rating-count {
+    font-size: 16px;
+    font-family: 'FontAwesome';
+}
+
+.details-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.whiskey-details-header {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    font-size: 38px;
+    font-family: monospace;
+    font-weight: bold;
+    padding-left: 1rem;
+    background-color: lightgray;
+    border-bottom: 3px solid saddlebrown;
+}
+
+.detail {
+    margin: 1rem;
+    background-color: sandybrown;
+    width: 10rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    border-radius: 1em;
+}
+
+.detail-header {
+    font-family: 'FontAwesome';
+    font-weight: bold;
+    font-size: 24px;
+    padding-top: 10px;
+    color: lightgray;
+}
+
+.col-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.purchase-btn {
+    width: 13rem;
+    height: 4rem;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.purchase-btn:hover {
+    color: black;
+    background-color: white;
+    box-shadow: 0px 4px 8px -5px black, 0 5px 40px #00adff !important;
+}
+
+.bottle-price {
+    font-size: 46px;
+    font-family: 'FontAwesome';
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.rating-submit {
+    border-radius: 2em;
+    width: 10rem;
+    margin-top: 1rem;
+}
+
+.rating-login-btn {
+    border-radius: 2em;
+    width: 70%;
+}
+
+.rating-login-btn:hover {
+    box-shadow: 0px 4px 8px -5px black, 0 5px 40px #4bbf73 !important;
+    background-color: aliceblue;
+    color: black;
+}

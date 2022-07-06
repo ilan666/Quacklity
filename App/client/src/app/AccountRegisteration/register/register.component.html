@@ -1,0 +1,127 @@
+<ngx-spinner [fullScreen]="true">
+    <h3 class="spinner-label">
+        Creating account...
+    </h3>
+</ngx-spinner>
+<div class="container mat-elevation-z10">
+    <div class="header">
+        <h2>Sign up</h2>
+    </div>
+    <mat-horizontal-stepper linear #stepper="matHorizontalStepper">
+
+        <mat-step [stepControl]="nameForm">
+            <form [formGroup]="nameForm" autocomplete="off">
+                <div class="form-inputs">
+                    <ng-template matStepLabel>Username</ng-template>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <mat-label>First Name</mat-label>
+                            <input type="text" matInput formControlName="firstName" placeholder="Ex. Pat" class="control" #firstName autocomplete="off">
+                            <button *ngIf="firstName.value" matSuffix mat-icon-button aria-label="Clear" (click)="firstName.value=''" style="font-size: 2rem;">
+                              <mat-icon>close</mat-icon>
+                            </button>
+                            <mat-error *ngIf="nameForm.get('firstName')?.hasError('required')">First Name is required</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <mat-label>Last Name</mat-label>
+                            <input type="text" matInput formControlName="lastName" placeholder="Ex. Spark" class="control" #lastName autocomplete="off">
+                            <button *ngIf="lastName.value" matSuffix mat-icon-button aria-label="Clear" (click)="lastName.value=''" style="font-size: 2rem;">
+                              <mat-icon>close</mat-icon>
+                            </button>
+                            <mat-error *ngIf="nameForm.get('lastName')?.hasError('required')">Last Name is required</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <mat-label>Nickname</mat-label>
+                            <input type="text" matInput formControlName="nickname" placeholder="Ex. patty" class="control" #nickname autocomplete="off">
+                            <mat-hint>Nickname length must be below 20 characters</mat-hint>
+                            <mat-error *ngIf="nameForm.get('nickname')?.hasError('maxlength')">Nickname length must be below 20 characters!</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <button matRipple [matRippleCentered]="true" class="btn register-confirm" matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+
+        <mat-step [stepControl]="detailsForm">
+            <form [formGroup]="detailsForm" autocomplete="off">
+                <ng-template matStepLabel>Details</ng-template>
+                <div class="form-inputs">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <mat-label>Date of birth</mat-label>
+                            <input matInput type="text" formControlName="dateOfBirth" class="control" bsDatepicker [bsConfig]="bsConfig" [maxDate]="maxDate" #dateOfBirth autocomplete="off">
+                            <button *ngIf="dateOfBirth.value" matSuffix mat-icon-button aria-label="Clear" (click)="dateOfBirth.value=''" style="font-size: 2rem;">
+                              <mat-icon>close</mat-icon>
+                            </button>
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-error *ngIf="detailsForm.get('dateOfBirth')?.hasError('required')">Please enter your date of birth!</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <mat-label>Email</mat-label>
+                            <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com" class="control" #email autocomplete="off">
+                            <button *ngIf="email.value" matSuffix mat-icon-button aria-label="Clear" (click)="email.value=''" style="font-size: 2rem;">
+                              <mat-icon>close</mat-icon>
+                            </button>
+                            <mat-error *ngIf="detailsForm.get('email')?.hasError('required')">Email is required</mat-error>
+                            <mat-error *ngIf="detailsForm.get('email')?.hasError('email')">Please enter a valid Email address</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <mat-label>Confirm Email</mat-label>
+                            <input type="email" matInput formControlName="confirmEmail" placeholder="Ex. pat@example.com" class="control" #confirmEmail autocomplete="off">
+                            <button *ngIf="confirmEmail.value" matSuffix mat-icon-button aria-label="Clear" (click)="confirmEmail.value=''" style="font-size: 2rem;">
+                              <mat-icon>close</mat-icon>
+                            </button>
+                            <mat-error *ngIf="detailsForm.get('confirmEmail')?.hasError('required')">Email is required</mat-error>
+                            <mat-error *ngIf="detailsForm.get('confirmEmail')?.hasError('email')">Please enter a valid Email address</mat-error>
+                            <mat-error *ngIf="detailsForm.get('confirmEmail')?.hasError('isMatching')">The Email fields are not equal!</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <button matRipple [matRippleCentered]="true" class="btn register-back" matStepperPrevious>Back</button>
+                    <button matRipple [matRippleCentered]="true" class="btn register-confirm" matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+
+        <mat-step [stepControl]="passwordForm">
+            <form [formGroup]="passwordForm" (ngSubmit)="register()" autocomplete="off">
+                <ng-template matStepLabel>Password</ng-template>
+                <div class="form-inputs">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput formControlName="password" class="control">
+                            <mat-hint>Password length must be between 5 - 30 characters</mat-hint>
+                            <mat-error *ngIf="passwordForm.get('password')?.hasError('required')">Password is required</mat-error>
+                            <mat-error *ngIf="passwordForm.get('password')?.hasError('minlength')">Password minimum length must be above 5 characters</mat-error>
+                            <mat-error *ngIf="passwordForm.get('password')?.hasError('maxlength')">Password maximum length must be below 30 characters</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <mat-label>Confirm Password</mat-label>
+                            <input type="password" matInput formControlName="confirmPassword" class="control">
+                            <mat-error *ngIf="passwordForm.get('confirmPassword')?.hasError('required')">Confirming Password is required</mat-error>
+                            <mat-error *ngIf="passwordForm.get('confirmPassword')?.hasError('isMatching')">Password fields do not match</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <button matRipple [matRippleCentered]="true" class="btn register-back" matStepperPrevious>Back</button>
+                    <button matRipple [matRippleCentered]="true" class="btn register-confirm" [disabled]="passwordForm.invalid" type="submit">Confirm</button>
+                </div>
+            </form>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>

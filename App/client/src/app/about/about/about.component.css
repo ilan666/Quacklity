@@ -1,0 +1,66 @@
+.img-header {
+    background-image: url(/assets/blob.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    padding-top: 12rem;
+}
+
+.container {
+    background-color: aliceblue;
+    padding: 2rem;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'FontAwesome';
+    margin-bottom: 6rem;
+}
+
+.pre-title {
+    font-family: 'FontAwesome';
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'FontAwesome';
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.divider {
+    width: 6rem;
+    color: black;
+    background-color: black;
+    height: 2px;
+}
+
+.subtitle {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.text-1 {
+    font-size: 17px;
+    text-align: center;
+}
+
+.logo {
+    border-radius: 50%;
+}
+
+.footer {
+    height: 15rem;
+    background-color: black;
+}
+
+.footer-desc {
+    color: white;
+    text-transform: none;
+    font-family: 'FontAwesome';
+}

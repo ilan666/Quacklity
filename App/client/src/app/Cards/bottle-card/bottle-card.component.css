@@ -1,0 +1,158 @@
+.card {
+    flex-direction: row;
+    border: none;
+    border-radius: 2em;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 0px 15px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}
+
+.card-head {
+    font-weight: bold;
+}
+
+.card-container {
+    border-radius: 2em;
+}
+
+.whiskey-img {
+    height: 350px;
+    border-radius: 2em;
+}
+
+.whiskey-title {
+    font-weight: bold;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 1rem;
+    font-size: 19px;
+    letter-spacing: 2px;
+    color: #643406;
+}
+
+.rated-title {
+    font-weight: bold;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 1rem;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #643406;
+}
+
+.whiskey-display-area {
+    width: 20%;
+}
+
+.rated-whiskey-display-area {
+    width: 35%;
+}
+
+.rated-rating {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.style-container {
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
+    width: 8rem;
+}
+
+.style-container>div>p {
+    margin: 0px;
+}
+
+.subtitles {
+    border-left: 1px solid lightgray;
+    padding-left: 10px;
+}
+
+.subtitles-values {
+    border-right: 1px solid lightgray;
+    padding-right: 10px;
+}
+
+.whiskey-statistics-header {
+    margin: 0px;
+}
+
+.whiskey-stat-age {
+    margin: 2px;
+    margin-top: 25px;
+    font-family: 'FontAwesome';
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.whiskey-stat-age-label {
+    font-size: 10px;
+}
+
+.whiskey-stats-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.characteristics-container {
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rating {
+    width: 10rem;
+}
+
+.shop-add-to-cart-btn {
+    margin-top: 1rem;
+    border-radius: 1em;
+    width: 20rem;
+}
+
+.home-add-to-cart-btn {
+    border-radius: 1em;
+    width: 10rem;
+    text-transform: none;
+}
+
+.rating-number {
+    font-family: 'FontAwesome';
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    height: 2rem;
+}
+
+.rating-stars {
+    font-size: 32px;
+    letter-spacing: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.rating-count {
+    margin: 0;
+}
+
+.btn-primary:hover {
+    color: black;
+    background-color: white;
+    box-shadow: 0px 4px 8px -5px black, 0 5px 40px #00adff !important;
+}
+
+.checkout-user-rated {
+    display: flex;
+    justify-content: space-around;
+}
+
+.shop-add-to-cart-btn-user {
+    margin-top: 1rem;
+    border-radius: 1em;
+    width: 13rem;
+    text-transform: none;
+}

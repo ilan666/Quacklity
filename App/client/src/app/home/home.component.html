@@ -1,0 +1,70 @@
+<div class="home-container">
+    <div class="img-header">
+        <img class="logo" [src]="'/assets/logo.png'" alt="">
+        <button matRipple [matRippleCentered]="true" class="btn text-center btn-secondary home-store-navigator" routerLink="/store">Store</button>
+    </div>
+
+    <div class="home-rated-drinks">
+        <h2 class="rated-drinks-header text-center">Most rated drinks</h2>
+
+        <div class="row">
+            <div class="col-4" *ngFor="let bottle of ratedBottles">
+                <app-bottle-card [rated_whiskey]="bottle"></app-bottle-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="img-footer mt-5">
+        <p class="img-footer-desc top text-center">Comfortable</p>
+        <p class="img-footer-desc text-center">Fast</p>
+        <p class="img-footer-desc text-center">Classic</p>
+    </div>
+
+    <div class="sorter">
+        <div class="sorter-container mat-elevation-z4">
+            <mat-form-field class="sorter-type-selection">
+                <mat-label>Select whiskey type</mat-label>
+                <mat-select [disabled]="true">
+                    <mat-option value="scotch">Scotch</mat-option>
+                    <mat-option value="bourbon">Bourbon</mat-option>
+                    <mat-option value="tennessee">Tennesse</mat-option>
+                    <mat-option value="irish">Irish</mat-option>
+                    <mat-option value="white">White</mat-option>
+                    <mat-option value="rye">Rye</mat-option>
+                    <mat-option value="canadian">Canadian</mat-option>
+                    <mat-option value="japanese">Japanese</mat-option>
+                    <mat-option value="single-malt">Single-Malt</mat-option>
+                    <mat-option value="blended">Blended</mat-option>
+                </mat-select>
+                <mat-error>Incompatible data</mat-error>
+            </mat-form-field>
+            <div class="h-divider"></div>
+            <div class="sorter-price-range">
+                <p class="text-center">Price range</p>
+                <div class="slider-container">
+                    <div class="slider-text-values">
+                        <span>{{priceSlider.value}}</span><span>{{priceSlider.value + 4}}</span>
+                    </div>
+                    <mat-slider min="0" max="600" step="0.5" tickInterval="auto" #priceSlider></mat-slider>
+                </div>
+            </div>
+            <div class="h-divider"></div>
+            <div class="sorter-price-range">
+                <p class="text-center">Rating</p>
+                <div class="slider-container">
+                    <div class="slider-text-values">
+                        <span>{{ratingSlider.value}}</span><span>{{ratingSlider.value + 1}}</span>
+                    </div>
+                    <mat-slider min="0" max="5" step="0.1" tickInterval="auto" #ratingSlider></mat-slider>
+                </div>
+            </div>
+
+            <a matRipple [matRippleCentered]="true" class="btn btn-outline-success sorter-btn-confirm" routerLink="/store">Get the whiskey</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h4 class="footer-desc text-center">Website created and powered by Ilan Cherniavsky</h4>
+        <h6 class="footer-desc text-center">Finish project to HackerU</h6>
+    </div>
+</div>

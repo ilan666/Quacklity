@@ -1,0 +1,95 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    border-radius: 2em;
+    width: 27rem;
+    height: 25rem;
+    background-color: aliceblue;
+    margin-right: 6rem;
+}
+
+.login-confirm {
+    margin-top: 1rem;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 3em;
+    letter-spacing: 2px;
+    box-shadow: 0px 4px 8px -5px black, 0 5px 40px #00adff !important;
+    font-family: 'FontAwesome';
+}
+
+.login-confirm:hover {
+    box-shadow: 0px 4px 8px -5px black, 0 5px 40px #4bbf73 !important;
+    background-color: aliceblue;
+}
+
+mat-form-field {
+    width: 98%;
+}
+
+h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'FontAwesome';
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid lightgray;
+    width: 15rem;
+}
+
+.control,
+mat-label {
+    height: 2rem;
+    font-size: 1.2rem;
+    font-family: 'FontAwesome';
+}
+
+mat-error {
+    font-family: 'FontAwesome';
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.account-options {
+    border-top: 1px solid lightgray;
+    padding-top: 1rem;
+}
+
+.row {
+    background-color: bisque;
+    margin: 0px;
+    height: 92.5%;
+}
+
+.spinner-label {
+    color: white;
+    text-transform: none;
+}
+
+.register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    border-radius: 2em;
+    width: 20rem;
+    height: 12rem;
+    background-color: aliceblue;
+    margin-right: 7rem;
+    align-items: center;
+}
+
+.header-register {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'FontAwesome';
+    font-size: 22px;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid lightgray;
+    text-transform: none;
+}

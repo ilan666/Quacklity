@@ -1,0 +1,220 @@
+mat-sidenav {
+    margin: 16px;
+    width: 20rem;
+    border-right: none;
+    background: #0d6efd;
+    color: white;
+    border-radius: 1em;
+    padding: 16px;
+    text-align: center;
+}
+
+h4 {
+    text-transform: none;
+}
+
+mat-sidenav-container {
+    height: 40rem;
+    background-color: bisque;
+    margin: 1rem;
+}
+
+mat-sidenav-content {
+    background-color: bisque;
+}
+
+.row {
+    padding-right: 8rem;
+    padding-left: 8rem;
+    background-color: bisque;
+    height: 92.5%;
+}
+
+.photo-container {
+    display: flex;
+    background-color: aliceblue;
+}
+
+.content-container {
+    height: 37.9rem;
+    border-radius: 1em;
+    margin: 16px;
+    margin-left: 2rem;
+    padding: 16px;
+    overflow: auto;
+    background-color: aliceblue;
+}
+
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    background: #4bbf73;
+}
+
+mat-icon {
+    margin-right: 8px;
+}
+
+.name {
+    margin-top: 2rem;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: cursive;
+    color: white;
+    text-transform: capitalize;
+}
+
+.description {
+    margin-top: 1rem;
+    color: lightgray;
+}
+
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: blanchedalmond;
+}
+
+.avatar {
+    margin-top: 16px;
+    width: 17rem;
+    height: 17rem;
+    border-radius: 50%;
+}
+
+.header-rate {
+    font-size: 4rem;
+    font-family: 'FontAwesome';
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+.header {
+    font-family: 'FontAwesome';
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.material-icons {
+    margin: 0.5rem;
+}
+
+h2 {
+    margin: 0;
+    text-transform: capitalize;
+}
+
+hr {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.section-bordered {
+    border-top: 1px solid #e6e6e6;
+}
+
+.section-md {
+    padding-top: 36px;
+    padding-bottom: 36px;
+}
+
+.display-area {
+    overflow: hidden;
+    text-align: center;
+    height: inherit;
+    width: 100%;
+    position: relative;
+}
+
+#profileImageUploader .display-area {
+    overflow: hidden;
+    text-align: center;
+    height: inherit;
+    width: 180px;
+}
+
+.profileImageUploader {
+    display: inline-block;
+    width: 100%;
+    height: 180px;
+    text-align: -webkit-center;
+}
+
+.profile-img {
+    height: inherit;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.background-img {
+    height: inherit;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profileUploaderBtn {
+    padding-right: 20px;
+    padding-left: 19px;
+    text-transform: capitalize;
+    border-radius: 3em;
+    width: 100%;
+    display: block;
+}
+
+.backgroundUploaderBtn {
+    padding-right: 20px;
+    padding-left: 19px;
+    text-transform: capitalize;
+    border-radius: 3em;
+    width: 100%;
+    display: block;
+}
+
+.backgroundImageUploader {
+    display: inline-block;
+    width: 100%;
+    height: 180px;
+    text-align: -webkit-center;
+}
+
+.setting-file-upload>button {
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+}
+
+.setting-file-upload {
+    position: relative;
+    margin-top: 1rem;
+    width: 220px;
+}
+
+.uploadFile {
+    text-align: right;
+    position: relative;
+    opacity: 0%;
+    width: 100%;
+    font-size: 23px;
+    height: 3rem;
+    z-index: 2;
+}
+
+.form-control {
+    width: 100%;
+}
+
+.spinner-label {
+    color: white;
+    text-transform: none;
+    margin-top: 5rem;
+}
+
+mat-hint {
+    font-size: 14px;
+}

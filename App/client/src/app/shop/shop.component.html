@@ -1,0 +1,230 @@
+<div class="row" style="margin: 0px; padding-top: 1rem;">
+    <div class="col-4">
+        <mat-accordion>
+            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Get Started
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="store-start-filter text-center">
+                    <h1 class="section-header text-start">Lets get you what you like..</h1>
+                    <button matRipple [matRippleCentered]="true" class="btn type-selection" (click)="nextStep()">Find my whiskey</button>
+                    <!-- Delete -->
+                    <mat-error>This expansion pannel not working at the moment due</mat-error>
+                    <mat-error>Incompatible data, The data currently shown in the store is</mat-error>
+                    <mat-error>Temporary</mat-error>
+                    <!-- Delete -->
+                </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Whiskey Types
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="filter-types text-center">
+                    <h1 class="section-header text-start">Select your wanted types</h1>
+                    <div class="types-buttons">
+                        <button class="btn btn-outline-dark btn-selection" (click)="selectType(scotch, 'scotch')" #scotch matRipple [matRippleCentered]="true">Scotch</button>
+                        <button class="btn btn-outline-dark btn-selection" (click)="selectType(bourbon, 'bourbon')" #bourbon matRipple [matRippleCentered]="true">Bourbon</button>
+                        <button class="btn btn-outline-dark btn-selection" (click)="selectType(tennessee, 'tennessee')" #tennessee matRipple [matRippleCentered]="true">Tennessee</button>
+                        <button class="btn btn-outline-dark btn-selection" (click)="selectType(irish, 'irish')" #irish matRipple [matRippleCentered]="true">Irish</button>
+                        <button class="btn btn-outline-dark btn-selection" (click)="selectType(white, 'white')" #white matRipple [matRippleCentered]="true">White</button>
+                        <button class="btn btn-outline-dark btn-selection" (click)="selectType(rye, 'rye')" #rye matRipple [matRippleCentered]="true">Rye</button>
+                        <button class="btn btn-outline-dark btn-selection" (click)="selectType(canadian, 'canadian')" #canadian matRipple [matRippleCentered]="true">Canadian</button>
+                        <button class="btn btn-outline-dark btn-selection" (click)="selectType(japanese, 'japanese')" #japanese matRipple [matRippleCentered]="true">Japanese</button>
+                        <button class="btn btn-outline-dark btn-selection" (click)="selectType(singleMalt, 'singleMalt')" #singleMalt matRipple [matRippleCentered]="true">Single-Malt</button>
+                        <button class="btn btn-outline-dark btn-selection" (click)="selectType(blended, 'blended')" #blended matRipple [matRippleCentered]="true">Blended</button>
+                    </div>
+                    <button matRipple [matRippleCentered]="true" class="btn type-selection" (click)="nextStep()">Apply</button>
+                </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Price Range
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="wine-filter-pricing text-center">
+                    <h1 class="section-header text-start">Price range</h1>
+                    <div class="slider-container mat-elevation-z4">
+                        <div class="slider-text-values">
+                            <span>MIN ${{minSlider.value}}</span>
+                        </div>
+                        <mat-slider min="0" max="1500" step="4" tickInterval="auto" #minSlider></mat-slider>
+                    </div>
+                    <div class="slider-container mat-elevation-z4">
+                        <div class="slider-text-values">
+                            <span>MAX ${{maxSlider.value}}</span>
+                        </div>
+                        <mat-slider min="0" max="1500" step="4" tickInterval="auto" #maxSlider></mat-slider>
+                    </div>
+                    <button matRipple [matRippleCentered]="true" class="btn type-selection" (click)="nextStep()">Apply</button>
+                </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Rating Range
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="wine-filter-pricing text-center">
+                    <h1 class="section-header text-start">Average rating range</h1>
+                    <div class="rating-options-container">
+                        <mat-radio-button value="2">
+                            <rating class="rating-stars" [max]="2" [readonly]="true"></rating>
+                        </mat-radio-button>
+                        <mat-radio-button value="3">
+                            <rating class="rating-stars" [max]="3" [readonly]="true"></rating>
+                        </mat-radio-button>
+                        <mat-radio-button value="4">
+                            <rating class="rating-stars" [max]="4" [readonly]="true"></rating>
+                        </mat-radio-button>
+                        <mat-radio-button value="5">
+                            <rating class="rating-stars" [max]="5" [readonly]="true"></rating>
+                        </mat-radio-button>
+                    </div>
+                    <button matRipple [matRippleCentered]="true" class="btn type-selection" (click)="nextStep()">Apply</button>
+                </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Casks
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="wine-filter-pricing text-center">
+                    <h1 class="section-header text-start">Casks</h1>
+                    <button matRipple [matRippleCentered]="true" class="btn type-selection" (click)="nextStep()">Apply</button>
+                </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="step === 5" (opened)="setStep(5)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Distillery Regions
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="wine-filter-pricing text-center">
+                    <h1 class="section-header text-start">Distillery Regions</h1>
+                    <div class="types-buttons">
+                        <!-- Scotch -->
+                        <ng-container>
+                            <button class="btn btn-outline-dark btn-selection">Speyside</button>
+                            <button class="btn btn-outline-dark btn-selection">Lowland</button>
+                            <button class="btn btn-outline-dark btn-selection">Highland</button>
+                            <button class="btn btn-outline-dark btn-selection">Campbeltown</button>
+                            <button class="btn btn-outline-dark btn-selection">Islay</button>
+                            <button class="btn btn-outline-dark btn-selection">Island</button>
+                        </ng-container>
+
+                        <!-- Irish -->
+                        <ng-container>
+                            <button class="btn btn-outline-dark btn-selection">Dublin</button>
+                            <button class="btn btn-outline-dark btn-selection">Wild Atlantic</button>
+                            <button class="btn btn-outline-dark btn-selection">Ancient East</button>
+                            <button class="btn btn-outline-dark btn-selection">Hidden Heartland</button>
+                            <button class="btn btn-outline-dark btn-selection">Northern Ireland</button>
+                        </ng-container>
+
+                        <!-- Bourbon + White -->
+                        <ng-container>
+                            <button class="btn btn-outline-dark btn-selection">Bardstown</button>
+                            <button class="btn btn-outline-dark btn-selection">Bowling Green</button>
+                            <button class="btn btn-outline-dark btn-selection">Danville</button>
+                            <button class="btn btn-outline-dark btn-selection">Eastern Kentucky</button>
+                            <button class="btn btn-outline-dark btn-selection">Frankfort</button>
+                            <button class="btn btn-outline-dark btn-selection">Lawrenceburg</button>
+                            <button class="btn btn-outline-dark btn-selection">Lebanon</button>
+                            <button class="btn btn-outline-dark btn-selection">Lexington</button>
+                            <button class="btn btn-outline-dark btn-selection">Lorreto</button>
+                            <button class="btn btn-outline-dark btn-selection">Louisville</button>
+                            <button class="btn btn-outline-dark btn-selection">Northern Kentucky</button>
+                            <button class="btn btn-outline-dark btn-selection">Owensboro</button>
+                            <button class="btn btn-outline-dark btn-selection">Paducah</button>
+                            <button class="btn btn-outline-dark btn-selection">Shelbyville</button>
+                            <button class="btn btn-outline-dark btn-selection">Shepherdsville</button>
+                            <button class="btn btn-outline-dark btn-selection">Versailles</button>
+                            <button class="btn btn-outline-dark btn-selection">Western Kentucky</button>
+                        </ng-container>
+
+                        <!-- Tennessee + White -->
+                        <ng-container>
+                            <button class="btn btn-outline-dark btn-selection">East Tennessee</button>
+                            <button class="btn btn-outline-dark btn-selection">West Tennessee</button>
+                            <button class="btn btn-outline-dark btn-selection">Middle Tennessee</button>
+                        </ng-container>
+
+                        <!-- Canadian -->
+                        <ng-container>
+                            <button class="btn btn-outline-dark btn-selection">British Columbia</button>
+                            <button class="btn btn-outline-dark btn-selection">Quebec</button>
+                            <button class="btn btn-outline-dark btn-selection">Ontario</button>
+                            <button class="btn btn-outline-dark btn-selection">Alberta</button>
+                            <button class="btn btn-outline-dark btn-selection">Nova Scotia</button>
+                            <button class="btn btn-outline-dark btn-selection">Saskatchewan</button>
+                            <button class="btn btn-outline-dark btn-selection">New Brunswick</button>
+                            <button class="btn btn-outline-dark btn-selection">Newfoundland And Labrador</button>
+                            <button class="btn btn-outline-dark btn-selection">Manitoba</button>
+                            <button class="btn btn-outline-dark btn-selection">Prince Edward Island</button>
+                        </ng-container>
+
+                        <!-- Japanese -->
+                        <ng-container>
+                            <button class="btn btn-outline-dark btn-selection">Suntory Yamazaki</button>
+                            <button class="btn btn-outline-dark btn-selection">Chichibu</button>
+                            <button class="btn btn-outline-dark btn-selection">Hakushu</button>
+                            <button class="btn btn-outline-dark btn-selection">Fuji Gotemba</button>
+                            <button class="btn btn-outline-dark btn-selection">Yoichi</button>
+                            <button class="btn btn-outline-dark btn-selection">Hombo Shuzo</button>
+                        </ng-container>
+                    </div>
+                    <button matRipple [matRippleCentered]="true" class="btn type-selection" (click)="nextStep()">Apply</button>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+    <div class="col-8">
+        <div class="store-content">
+            <div class="sorter-container">
+                <mat-form-field class="search">
+                    <mat-label>Search your bottle...</mat-label>
+                    <mat-icon matPrefix>search</mat-icon>
+                    <input matInput type="search" [(ngModel)]="value" placeholder="Ex. GlenLevit">
+                    <button class="clear" *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+                </mat-form-field>
+                <div class="select-container">
+                    <label for="sorter">Sort by:</label>
+                    <select name="sorter" id="sorter" class="btn sorter mat-elevation-z8">
+              <option value="1">Rating</option>
+              <option value="1">Popularity</option>
+              <option value="1">Youngest</option>
+              <option value="1">Oldest</option>
+            </select>
+                </div>
+            </div>
+            <div class="paginator">
+                <pagination [boundaryLinks]="true" previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;" [itemsPerPage]="pagination.itemsPerPage" [(ngModel)]="pagination.currentPage" (pageChanged)="pageChanged($event)" [totalItems]="pagination.totalItems"
+                    [maxSize]="10">
+                </pagination>
+            </div>
+            <div class="row" style="position: relative;">
+                <div *ngFor="let bottle of whiskey | search : value">
+                    <app-bottle-card [whiskey]="bottle"></app-bottle-card>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <h4 class="footer-desc text-center">Website created and powered by Ilan Cherniavsky</h4>
+    <h6 class="footer-desc text-center">Finish project to HackerU</h6>
+</div>

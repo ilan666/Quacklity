@@ -1,0 +1,91 @@
+.order-container {
+    border: 1px solid lightgray;
+    padding: 2rem;
+    margin: 2rem;
+    background-color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.order-header {
+    text-align: center;
+    text-transform: none;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.order-number {
+    text-transform: none;
+    font-weight: bold;
+    padding: 1rem;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.id {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.img {
+    width: 44px;
+}
+
+.table-data {
+    padding-right: 2rem;
+}
+
+.payment-header {
+    margin-top: 1rem;
+    font-weight: bold;
+    text-transform: none;
+    margin-bottom: 0px;
+}
+
+.payment-method {
+    text-transform: none;
+    font-size: 16px;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 0.5rem;
+}
+
+.order-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-summary-sum {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    text-transform: none;
+    font-weight: bold;
+}
+
+.logo-text {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'FontAwesome';
+    text-shadow: 0px 1px 15px yellow;
+    color: #f0ad4e;
+    text-decoration-line: underline;
+    margin: 0px;
+}
+
+.sign-container {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.back-btn {
+    border-radius: 2em;
+    font-family: 'FontAwesome';
+    width: 10rem;
+}

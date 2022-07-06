@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-md mat-elevation-z8">
+    <div class="container">
+        <a class="main-text" routerLink="/">
+            Quacklity
+        </a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/">
+                    <i class="fa fa-home fa-nav"></i>
+                    <mat-hint class="nav-hint">Home</mat-hint>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/store">
+                    <i class="fa fa-shopping-cart fa-nav"></i>
+                    <mat-hint class="nav-hint">Store</mat-hint>
+                </a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link">
+                    <i class="fa fa-comment fa-nav"></i>
+                    <mat-hint class="nav-hint">Forum</mat-hint>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">
+                    <i class="fa fa-question-circle fa-nav"></i>
+                    <mat-hint class="nav-hint">Support</mat-hint>
+                </a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" routerLink="/about">
+                    <i class="fa fa-info-circle fa-nav"></i>
+                    <mat-hint class="nav-hint">About</mat-hint>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" routerLink="/test-errors">
+                    <i class="fa fa-exclamation-circle fa-nav"></i>
+                    <mat-hint class="nav-hint">Errors</mat-hint>
+                </a>
+            </li>
+        </ul>
+
+        <div class="user-nav-actions" *ngIf="currentUser$ | async as user">
+            <div class="btn-group profile-dropdown" dropdown placement="bottom right" [autoClose]="true" [isAnimated]="true">
+                <a class="dropdown-toggle" dropdownToggle>
+                    <img class="img" [src]="user.photoUrl ? user.photoUrl : './assets/user.png'" alt="user.username"> <span class="caret"></span>
+                </a>
+                <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu  dropdown-menu-right" role="menu">
+                    <li class="label dropdown-item-text text-center text-muted">Signed as</li>
+                    <li class="label dropdown-item-text text-center">{{user.username}}</li>
+                    <li class="divider dropdown-divider"></li>
+                    <li role="menuitem"><a class="dropdown-item" routerLink="/profile">Profile</a></li>
+                    <li role="menuitem"><a class="dropdown-item" routerLink="/orders">Orders</a></li>
+                    <li class="divider dropdown-divider"></li>
+                    <li role="menuitem"><button class="dropdown-item" (click)="logout()">Log out</button></li>
+                </ul>
+            </div>
+            <div class="user-shopping-cart">
+                <a (click)="loadCart()" style="cursor: pointer;">
+                    <mat-icon class="cart">shopping_cart</mat-icon>
+                </a>
+            </div>
+        </div>
+
+        <div *ngIf="!(currentUser$ | async)">
+            <a class="nav-link" routerLinkActive="active" routerLink="/login">
+                <i class="fa fa-user fa-nav"></i>
+                <mat-hint class="nav-hint">Login / Register</mat-hint>
+            </a>
+        </div>
+
+    </div>
+</nav>
