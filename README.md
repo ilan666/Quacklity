@@ -1,5 +1,13 @@
 # Quacklity whiskey web-store project
 
+# Installation - IMPORTANT
+- Download zip
+- Open folder
+- Open terminal and write "npm install"
+- After installation write "cd Quacklity/App/API" and then "dotnet run"
+- Open another terminal and write "cd Quacklity/App/API" and then "ng serve"
+- Enjoy
+
 # Introduction:
 Hi, Project tester!
 My name is Ilan Cherniavsky, A student graduated from HackerU company.
